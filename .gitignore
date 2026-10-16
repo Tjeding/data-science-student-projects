@@ -1,0 +1,46 @@
+# Python and environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+
+# Local credentials
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+*client_secret*.json
+credentials.json
+token.json
+
+# Data and artifacts (keep folder placeholders and documentation)
+projects/*/data/raw/*
+projects/*/data/interim/*
+projects/*/data/processed/*
+projects/*/models/*
+projects/*/reports/*
+!projects/*/reports/figures/
+projects/*/reports/figures/*
+!**/.gitkeep
+!**/README.md
+!projects/*/reports/*.md
+
+# Existing source datasets
+!projects/01_public_dataset_eda/data/raw/titanic.csv
+!projects/02_housing_linear_regression/data/raw/BostonHousing.csv
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+#
+Data Science Task 1.pdf
+Task - 2 Data Science.pdf
+Task - 3 Data Science.pdf
+

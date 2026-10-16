@@ -1,0 +1,8 @@
+# Common analysis and notebook tools; validate and pin versions during implementation.
+numpy
+pandas
+matplotlib
+seaborn
+scikit-learn
+jupyterlab
+ipykernel

@@ -1,8 +1,9 @@
 # Iris Data Exploration
 
-Start with the [executed lesson](reports/iris_exploration_walkthrough.html), or
-open the [guided notebook](notebooks/01_iris_exploration.ipynb) to run the code.
-The [findings report](reports/findings.md) contains results and charts.
+Start with the [findings report and charts](reports/findings.md), which can be
+read on GitHub. Open the [guided notebook](notebooks/01_iris_exploration.ipynb)
+to run the code. The HTML walkthrough is a local export; generate it using the
+commands below and open it in your browser.
 
 ## Status
 
@@ -61,6 +62,8 @@ For later modeling, learn any imputation values on training data only.
 
 ## Saved outputs
 
+![Iris feature distributions](reports/figures/01_feature_histograms.png)
+
 - `data/processed/iris_explored.csv`: all 150 observations with named species.
 - `reports/data_overview.csv`: types, counts and missingness before preparation.
 - `reports/descriptive_statistics.csv` and `statistics_by_species.csv`: summaries.
@@ -74,8 +77,11 @@ For later modeling, learn any imputation values on training data only.
 - `reports/iris_exploration_executed.ipynb` and `iris_exploration_walkthrough.html`:
   executed notebook and browser-readable lesson, generated during validation.
 
-Generated data, charts, HTML and executed notebooks follow the existing Git
-ignore rules. The source notebook has cleared outputs. To regenerate the lesson:
+PNG charts and the Markdown findings report are included in version control so
+the pictures can display on GitHub. Generated data, HTML and executed notebooks
+remain ignored. The source notebook has cleared outputs; run it locally to see
+its output, or read the findings report for the saved charts. To regenerate the
+local HTML lesson:
 
 ```powershell
 .\.venv\Scripts\python.exe -m jupyter nbconvert --to notebook --execute --ExecutePreprocessor.kernel_name=python3 --output iris_exploration_executed --output-dir projects/05_iris_data_exploration/reports projects/05_iris_data_exploration/notebooks/01_iris_exploration.ipynb

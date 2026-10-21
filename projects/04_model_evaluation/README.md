@@ -1,8 +1,9 @@
 # Task 4: Model Evaluation
 
-Start with the [executed lesson](reports/model_evaluation_walkthrough.html), or
-open the [guided notebook](notebooks/01_model_evaluation.ipynb) to run the code.
-The [findings report](reports/findings.md) explains the actual results.
+Start with the [findings report and charts](reports/findings.md), which can be
+read on GitHub. Open the [guided notebook](notebooks/01_model_evaluation.ipynb)
+to run the code. The HTML walkthrough is a local export; regenerate it using
+the commands below and open it in your browser.
 
 ## Status
 
@@ -85,9 +86,11 @@ and versions are recorded in `metrics.json`. Overall accuracy appears in the
 text report and metrics files; the report CSV contains class rows and averages.
 The two PNG charts are in `reports/figures/`.
 
-Generated artifacts are ignored by Git under the existing repository rules;
-the source notebook keeps its outputs clear. The executed notebook and HTML
-lesson were generated during validation. To regenerate them:
+PNG charts and the Markdown findings report are included in version control for
+GitHub. Other generated artifacts remain ignored, and the source notebook keeps
+its outputs clear. Run the notebook locally to see its output, or read the
+findings report for the saved charts. To regenerate the local executed notebook
+and HTML lesson:
 
 ```powershell
 .\.venv\Scripts\python.exe -m jupyter nbconvert --to notebook --execute --ExecutePreprocessor.kernel_name=python3 --output model_evaluation_executed --output-dir projects/04_model_evaluation/reports projects/04_model_evaluation/notebooks/01_model_evaluation.ipynb

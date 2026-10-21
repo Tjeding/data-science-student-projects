@@ -29,6 +29,9 @@ projects/*/reports/figures/*
 !**/README.md
 !projects/*/reports/*.md
 
+# Keep exported report charts available for Markdown previews on GitHub.
+!projects/*/reports/figures/*.png
+
 # Existing source datasets
 !projects/01_public_dataset_eda/data/raw/titanic.csv
 !projects/02_housing_linear_regression/data/raw/BostonHousing.csv

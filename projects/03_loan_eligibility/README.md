@@ -1,8 +1,8 @@
 # Loan Eligibility Prediction: a guided Python project
 
-Start with the [browser-readable lesson with executed results](reports/loan_eligibility_walkthrough.html),
-or open [the annotated notebook](notebooks/01_loan_eligibility.ipynb) to run and modify
-the code. It explains each stage from reading the supplied CSV through exploration,
+Start with the [results report and charts](reports/findings.md), which can be
+read on GitHub, or open [the annotated notebook](notebooks/01_loan_eligibility.ipynb)
+to run and modify the code. It explains each stage from reading the supplied CSV through exploration,
 preprocessing, model comparison, evaluation, and prediction for a fictional application.
 The [results report](reports/findings.md) contains actual findings and charts.
 The [Python script](src/train.py) reproduces the analysis and saves a fitted model.
@@ -187,10 +187,11 @@ matching library versions, recorded with every run in `reports/metrics.json`.
 - `reports/figures/`: four saved figures.
 - `models/loan_eligibility_pipeline.joblib`: fitted model and preprocessing.
 
-Generated tables, charts, model files and the local CSV follow the existing Git
-ignore rules. The notebook is saved without bulky outputs and can be rerun.
-The executed notebook and HTML lesson are generated local artifacts. Recreate
-them after updating the lesson with:
+PNG charts and the Markdown findings report are included in version control for
+GitHub. Generated tables, model files and the local CSV remain ignored. The
+notebook has cleared outputs; run it locally to see its output, or read the
+findings report for the saved charts. The executed notebook and HTML lesson
+are local exports. Generate them and open the HTML in your browser with:
 
 ```powershell
 .\.venv\Scripts\python.exe -m jupyter nbconvert --to notebook --execute projects/03_loan_eligibility/notebooks/01_loan_eligibility.ipynb --output loan_eligibility_executed.ipynb --output-dir projects/03_loan_eligibility/reports --ExecutePreprocessor.timeout=180

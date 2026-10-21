@@ -96,7 +96,7 @@ Update its README and data provenance record, then add it to the project index. 
 ## Working conventions
 
 - Keep original data unchanged and document its source, license, and retrieval date.
-- New datasets, generated outputs, environments, and secrets are ignored by default. Existing source CSVs are explicitly retained.
+- New datasets, model artifacts, environments, and secrets are ignored by default. Existing source CSVs, Markdown findings, and exported PNG charts are explicitly retained. Other generated reports remain local.
 - Clear large notebook outputs before committing. Use names such as `01_exploration.ipynb` and `02_modeling.ipynb`.
 - Resolve paths explicitly; scripts should use `Path(__file__)` and notebooks should document their working directory.
 - Split training and test data before fitting preprocessing, and record random seeds and evaluation choices.

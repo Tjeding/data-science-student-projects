@@ -1,0 +1,6 @@
+# Match the environment that produced Task 3's serialized pipeline.
+-r ../03_loan_eligibility/requirements.txt
+# Execute the lesson and export its browser-readable version.
+nbformat==5.11.1
+nbclient==0.11.0
+nbconvert==7.17.2

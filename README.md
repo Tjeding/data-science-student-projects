@@ -1,6 +1,6 @@
 # Data Science Student Projects
 
-A growing portfolio of independent Python data science projects. Titanic EDA and housing regression have starting scripts, and the loan eligibility project includes a guided notebook, reproducible model comparison, and a findings report. Other projects currently provide scaffolds.
+A growing portfolio of independent Python data science projects. Titanic EDA and housing regression have starting scripts. Loan eligibility and model evaluation include guided notebooks, reproducible scripts, and findings reports. Other projects currently provide scaffolds.
 
 ## Project index
 
@@ -67,9 +67,15 @@ The scripts resolve data and output paths relative to their own project folder. 
 .\.venv\Scripts\python.exe projects/01_public_dataset_eda/src/eda.py
 .\.venv\Scripts\python.exe projects/02_housing_linear_regression/src/train.py
 .\.venv\Scripts\python.exe projects/03_loan_eligibility/src/train.py
+.\.venv\Scripts\python.exe projects/04_model_evaluation/src/evaluate.py
 ```
 
 These are learning implementations. Titanic missing-value handling supports current pandas behavior, and housing preprocessing is fitted on the training split only. The housing script uses multiple predictors and reports MAE, MSE, RMSE, and R-squared. The Titanic EDA script opens plot windows. The loan script saves plots and compares a majority baseline, logistic regression, a decision tree, and a random forest using training-only cross-validation. Its [guided notebook](projects/03_loan_eligibility/notebooks/01_loan_eligibility.ipynb) explains each step. Generated CSV outputs go into `data/processed/` or `reports/`.
+
+Task 4 evaluates the saved Task 3 classifier on the original test partition and
+explains accuracy, precision, recall, confusion matrices and classification
+reports. Start with its [guided notebook](projects/04_model_evaluation/notebooks/01_model_evaluation.ipynb)
+or [evaluation findings](projects/04_model_evaluation/reports/findings.md).
 
 ## Add a project
 

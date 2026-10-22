@@ -1,18 +1,18 @@
 """Explore scikit-learn's bundled Iris data; save tables, figures and findings.
 
 Run from any directory: python path/to/05_iris_data_exploration/src/explore.py
+Charts open in interactive windows by default. Add --no-show to save files only.
 The guided notebook explains each step. No network access is needed.
 """
 
 from importlib.metadata import version
 from pathlib import Path
+import argparse
 import hashlib
 import json
 
 import matplotlib
 
-if __name__ == "__main__":
-    matplotlib.use("Agg")  # Save plots without opening windows; preserve notebook inline plots.
 import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
 import numpy as np
@@ -154,7 +154,7 @@ def plot_correlations(df):
     return fig
 
 
-def main():
+def main(show=False):
     raw = load_data()
     df, imputed = prepare_data(raw)
     reports = PROJECT_DIR / "reports"
@@ -189,7 +189,8 @@ def main():
     for plot, filename in figure_functions:
         fig = plot(df)
         fig.savefig(figures / filename, dpi=150)
-        plt.close(fig)
+        if not show:
+            plt.close(fig)
     summary = {
         "source": "sklearn.datasets.load_iris(as_frame=True)",
         "source_url": "https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_iris.html",
@@ -292,7 +293,21 @@ The script resolves paths relative to itself and needs no network connection.
     print(f"Repeated rows beyond the first: {summary['duplicate_rows_beyond_first']} (retained).")
     print(df[FEATURES].describe().round(3).to_string())
     print(f"Saved tables, five charts and findings to {reports}")
+    if show:
+        print("Opening all five charts. Close the plot windows to finish the script.")
+        plt.show(block=True)
 
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(description=__doc__)
+    display = parser.add_mutually_exclusive_group()
+    display.add_argument("--show", action="store_true", dest="show",
+                         help="Open plot windows as well as saving charts (the default).")
+    display.add_argument("--no-show", action="store_false", dest="show",
+                         help="Save charts and reports without opening plot windows.")
+    parser.set_defaults(show=True)
+    args = parser.parse_args()
+    # Tk provides interactive windows; Agg supports saving without a desktop.
+    # Configure this only for the script so importing it preserves notebook plots.
+    matplotlib.use("TkAgg" if args.show else "Agg")
+    main(show=args.show)

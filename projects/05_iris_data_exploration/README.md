@@ -37,8 +37,21 @@ From the repository root in PowerShell:
 
 Use the environment's Python kernel. In Jupyter, choose **Kernel > Restart Kernel
 and Run All Cells**. The notebook finds the project from inside the repository.
-The script resolves paths relative to itself and saves charts without opening
-windows. The notebook explains the commands and includes practice questions.
+The script resolves paths relative to itself. The notebook explains the commands
+and includes practice questions.
+
+Running the script normally opens the five charts in interactive windows and
+also saves them. To save files without opening windows, run:
+
+```powershell
+.\.venv\Scripts\python.exe projects/05_iris_data_exploration/src/explore.py --no-show
+```
+
+All five windows open after the reports are saved. Close the plot windows to
+finish the script. The earlier `--show` option is still supported, but is no
+longer required. Interactive windows use Matplotlib's Tk backend, provided by
+Python's tkinter. Run with the repository's `.venv` Python interpreter shown
+above so the script uses the installed project dependencies.
 
 ## Main findings
 
